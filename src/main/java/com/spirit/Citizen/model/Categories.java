@@ -1,0 +1,13 @@
+package com.spirit.Citizen.model;
+
+public enum Categories {
+    VOIRIE,
+    ECLAIRAGE_PUBLIC,
+    ENVIRONEMENT,
+    ESPACES_VERTS,
+    TRANSPORT_STATIONNEMENT,
+    LOGEMENT_URBANISME,
+    SERVICES_MUNICIPAUX,
+    SECURITE_PUBLIQUE,
+    SERVICE_SPCIAUX
+}
