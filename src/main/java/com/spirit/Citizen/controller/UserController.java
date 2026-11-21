@@ -71,7 +71,6 @@ public class UserController {
         return new ResponseEntity<>(demandes, HttpStatus.OK);
     }
 
-<<<<<<< Updated upstream
     @PostMapping(value = "/lance-signalement/{userId}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> creerSignalement(
             @PathVariable Long userId,
@@ -81,14 +80,6 @@ public class UserController {
             @RequestParam("optionSignalement") String optionSignalement,
             @RequestParam(value = "fichiersPreuves", required = false) List<MultipartFile> fichiersPreuves) {
         System.out.println("optionSignalement:" + optionSignalement);
-=======
-
-    @PostMapping(value = "/lance-signalement/{userId}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<Signalement> creerSignalement(
-            @PathVariable Long userId,
-            @RequestPart("signalement") Signalement signalement, // Signalement en tant qu'objet JSON
-            @RequestPart("fichiersPreuves") List<MultipartFile> fichiersPreuves) { // Fichiers multipart
->>>>>>> Stashed changes
 
         String[] coordonnees = lieu.replace("(", "").replace(")", "").split(",");
         double latitude = Double.parseDouble(coordonnees[0].trim());
@@ -115,15 +106,12 @@ public class UserController {
         return new ResponseEntity<>(successMessage, HttpStatus.CREATED);
     }
 
-<<<<<<< Updated upstream
     @GetMapping("/signalementbyuser/{userId}")
     public ResponseEntity<List<SignalementDto>> getSignalementsByUser(@PathVariable Long userId) {
         List<SignalementDto> signalements = signalementService.getSignalementsByUserId(userId);
         return new ResponseEntity<>(signalements, HttpStatus.OK);
     }
 
-=======
->>>>>>> Stashed changes
     ///////////////////////////////////// Notification //////////////////////////////////
     @GetMapping("/allnotifiation-byuser")
     public List<Notification> getAllNotifications(@RequestParam Long userId) {
